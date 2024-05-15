@@ -8,8 +8,8 @@
 
 class Movie {
 public:
-  char genre;
-  int availableStock;
+  char genre; // 'F' comedy, 'C' classic, 'D' drama.
+  int availableStock = 0;
   std::string director;
   std::string title;
 
