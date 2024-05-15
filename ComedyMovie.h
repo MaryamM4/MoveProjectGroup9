@@ -7,11 +7,11 @@
 class ComedyMovie : Movie {
 public:
   ComedyMovie(std::string title, std::string director, int releaseYear)
-      : Movie('C', title, director), releaseYear(releaseYear){};
+      : Movie(title, director), releaseYear(releaseYear){};
 
   ComedyMovie(std::string title, std::string director, int stock,
               int releaseYear)
-      : Movie('C', title, director, stock), releaseYear(releaseYear){};
+      : Movie(title, director, stock), releaseYear(releaseYear){};
 
   int getReleaseYear() { return releaseYear; };
 

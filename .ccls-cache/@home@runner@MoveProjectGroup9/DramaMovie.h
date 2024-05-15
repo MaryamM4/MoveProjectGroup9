@@ -1,14 +1,23 @@
 #ifndef DRAMAMOVIE_H
 #define DRAMAMOVIE_H
 
+#include "Movie.h"
 #include <iostream>
 
-class DramaMovie {
+class DramaMovie : Movie {
 public:
-  int releaseYear;
+  DramaMovie(std::string title, std::string director, int releaseYear)
+      : Movie(title, director), releaseYear(releaseYear){};
 
-  // Getter method(s):
-  int getReleaseYear();
+  DramaMovie(std::string title, std::string director, int stock,
+             int releaseYear)
+      : Movie(title, director, stock), releaseYear(releaseYear){};
+
+  int getReleaseYear() { return releaseYear; };
+  char getGenreTag() { return 'D'; };
+
+private:
+  int releaseYear;
 };
 
 #endif // DRAMAMOVIE_H

@@ -5,6 +5,11 @@
 #ifndef MOVIE_H
 #define MOVIE_H
 
+// Needed for factory methods.
+#include "ClassicMovie.h"
+#include "ComedyMovie.h"
+#include "DramaMovie.h"
+
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -12,11 +17,11 @@
 
 class Movie {
 public:
-  Movie(char genre, std::string title, std::string director)
-      : genre(genre), title(title), director(director){};
+  Movie(std::string title, std::string director)
+      : title(title), director(director){};
 
-  Movie(char genre, std::string title, std::string director, int stock)
-      : genre(genre), title(title), director(director), availableStock(stock){};
+  Movie(std::string title, std::string director, int stock)
+      : title(title), director(director), availableStock(stock){};
 
   // Change the available stock:
   bool borrowMovie();
@@ -33,8 +38,8 @@ public:
   virtual char getGenreTag() = 0;
 
   // Factory Methods:
-  std::vector<Movie *> createMovies(std::ifstream file);
-  Movie *createMovie(std::string fileline);
+  static std::vector<Movie *> createMovies(std::ifstream file);
+  static Movie *createMovie(std::string fileline);
 
 private:
   int availableStock = 0;

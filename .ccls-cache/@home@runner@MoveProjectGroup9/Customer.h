@@ -21,8 +21,8 @@ public:
   bool returnMovie(Movie *movie);
 
   // Factory methods
-  std::vector<Customer *> getCustomers(std::ifstream file);
-  Customer *getCustomer(std::string fileline);
+  static std::vector<Customer *> getCustomers(std::ifstream file);
+  static Customer *getCustomer(std::string fileline);
 
 private:
   std::string firstName;
