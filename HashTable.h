@@ -41,7 +41,7 @@ public:
   void display();
 
 private:
-  Customer **hashtable;
+  tablePair **hashtable;
 
   // Helper method for hasing.
   int hash(Customer *customer);
